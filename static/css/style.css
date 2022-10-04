@@ -1,0 +1,249 @@
+.container{
+	max-width: 1170px; 
+	margin: 0 auto;
+    justify-content: center;
+}
+h1{
+    position: top;
+	font-weight: 10; 
+	font-size: 45px; 
+	text-align: left;
+	line-height: 10px; 
+	color: rgb(255, 255, 255); 
+}
+nav{
+	display: flex;
+}
+h2{
+    font-weight: 700; 
+	font-size: 30px;
+	text-align: left;
+	line-height: 22px; 
+	color: #212121; 
+}
+h3{
+	font-weight: 600; 
+	font-size: 20px; 
+	line-height: 22px;
+	color: #212121;
+	text-align: right;
+}
+p{
+    font-size: 18px;  
+	line-height: 22px; 
+	color: #000000;
+}
+.nava{
+	color:#000000;
+}
+button{
+    padding: 25px 45px; 
+	background-color: #074fbb;
+	font-size: 20px; 
+	color:#fff; 
+    font-weight: 600;  
+	text-align: center;
+	line-height: 22px;
+	text-transform: uppercase;
+	border: none; 
+	outline: none;
+	border-radius: 0; 
+}
+button:hover{
+    background-color: #002d70;
+	transition: 0.3s; 
+}
+button:active{
+    background-color: #00144a; 
+	transition: 0.3s;
+}
+button.outline{
+    padding: 22px 42px; background-color: transparent; 
+	font-size: 20px; 
+	color: #212121; 
+	text-align: center;
+	line-height: 22px; 
+	text-transform: uppercase; 
+	cursor: pointer;
+	border: 3px solid #212121; 
+	outline: none;
+	border-radius: 0;
+}
+button.outline:hover{
+    background-color: #007065; 
+	border-color: #007065 !important; 
+	color: #fff; 
+	transition: 0.3s
+}
+button.outline:active{
+    background-color: #004a43; 
+	color: #fff; 
+	transition: 0.3s;
+}
+header{
+    background-color: rgb(158, 162, 237);
+	background-size: cover;
+	background-position: center 30%;
+	position: relative;
+	z-index: 1;
+	padding: 190px 0;
+}
+nav{
+    position:sticky;
+	top:0;
+	z-index:9999;
+	width:100%;
+	background-color: #F6FDA2;
+}
+.nav_div0{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1170px;
+}
+.nav_p{
+	text-align: right;
+    margin-left: 50px;
+}
+.nav_div1{
+    display: flex;
+    justify-content: right;
+}
+.posts{
+    background-color: #F4F07B;
+    display: flex;
+}
+.post{
+    background-color: #F6FDA2;
+    border-radius: 20px;
+    align-items: center;
+	width: 1000px;
+}
+.post_p{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+}
+.zagolovok{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+.navdiv{
+	margin-left: 100px;
+}
+.time_submit{
+	text-align: right;
+	padding-right: 20px;
+}
+.author{
+	text-align: left;
+	padding-left: 20px;
+}
+.xom{
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+}
+.ck{
+	height: 40px;
+	width: 40px;
+	margin-left: 15px;
+}
+* {box-sizing: border-box;}
+.air {
+  max-width: 350px;
+  margin: 50px auto 0;
+  padding: 20px;
+  background: #E4E3DF;
+  font-family: 'Oswald', sans-serif;
+}
+.form-inner {
+  border: 2px solid #909090;
+  border-bottom: none;
+}
+.stripes-block {
+  position: relative;
+  padding: 15px;
+  margin-bottom: 20px;
+  background: repeating-linear-gradient(-45deg, #E4E3DF, #E4E3DF 5px, #909090 6px, #909090 8px);
+  border-bottom: 2px solid #909090;
+}
+.stripes-block:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  margin-left: -6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fffffe;
+  box-shadow: 0 0 0 1px #090606, 0 0 0 12px #9c8778;
+}
+.form-row {
+  position: relative;
+  padding: 10px;
+  border-bottom: 2px solid #909090;
+}
+.form-row label {
+  display: block;
+}
+.form-row input {
+  display: block;
+  width: 100px;
+  padding: 0;
+  line-height: 30px;
+  border-width: 0;
+  background: #E4E3DF;
+}
+.form-row textarea {
+  width: 100%;
+  margin-bottom:40px;
+  padding: 0;
+  outline: 0;
+  line-height: 40px;
+  background: transparent url(https://html5book.ru/wp-content/uploads/2016/12/bg-form.png) bottom left repeat-x;
+  background-size: 8px 40px;
+  letter-spacing: 0.2em;
+  background-attachment: local;
+  background-repeat: repeat;
+  border-width: 0;
+  resize: none;
+}
+.form-row-icon {
+  position: relative;
+  border-bottom: 2px solid #909090;
+}
+.form-row-icon .fa {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 185px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: #909090;
+  color: #E4E3DF;
+  border-bottom: 2px solid;
+}
+.form-row-icon input {
+  display: block;
+  width: 100%;
+  padding: 0 10px 0 50px;
+  line-height: 40px;
+  box-sizing: border-box;
+  border-width: 0;
+  background: #E4E3DF;
+}
+.form-row-icon .fa-paper-plane-o {
+  border-bottom-color: #909090;
+  cursor: pointer;
+}
+.form-row-icon input[type="submit"] {
+  cursor: pointer;
+}
+#zag{
+	width: 300px;
+	height: 30px;
+}

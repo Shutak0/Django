@@ -1,0 +1,9 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content%}
+<section class="posts">
+        <div class="container">
+            {% include 'forum/comment.html' %}
+        </div>
+</section>
+{% endblock %}

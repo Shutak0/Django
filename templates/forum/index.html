@@ -1,0 +1,11 @@
+{% extends 'forum/base.html' %}
+{% load static %}
+{% block content%}
+    <section class="posts">
+        <div class="container">
+            {% for post in posts %}
+                {% include 'forum/post.html' %}
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
