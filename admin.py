@@ -1,8 +1,10 @@
+
 from django.contrib import admin
 from .models import Post, Comment, Theme
 class PostAdmin(admin.ModelAdmin):
     list_display =  ['title', 'text']
     list_filter = ['author', 'created']
+    prepopulated_fields = {'slug': ('title',)}
 class CommentAdmin(admin.ModelAdmin):
     list_display =  ['author', 'text']
     list_filter = ['author', 'created']

@@ -3,7 +3,9 @@
 {% block content%}
 <section class="posts">
         <div class="container">
+            {% include 'forum/post.html' %}
             {% include 'forum/comment.html' %}
+            {% include 'forum/send.html' %}
         </div>
 </section>
 {% endblock %}

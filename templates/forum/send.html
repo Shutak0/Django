@@ -1,23 +1,12 @@
-{% extends 'forum/base.html' %}
+
 {% load static %}
-{% block content%}
 <section class="posts">
-        <div class="container">
-              <form action="" class="air">
-<div class="form-inner">
-<div class="stripes-block"></div>
-<div class="form-row">
-<textarea rows="3" id="zag" required>Заголовок</textarea>
-</div>
-<div class="form-row">
-<textarea rows="3" id="sog" required>Содержание</textarea>
-</div>
-<div class="form-row-icon">
-<i class="fa fa-paper-plane-o"></i>
-<input type="submit" value="">
-</div>
-</div>
+        <div class="container"><form action="./" method="post">
+    <label for="comment">Комментарий</label>
+    <input type="text" name="name" id="name" class="comment">
+
+
+    <button  id="otpr">Опубликовать</button>
 </form>
         </div>
 </section>
-{% endblock %}

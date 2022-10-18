@@ -2,9 +2,19 @@
 <div class="post">
     <h2 class="zagolovok">{{post.title}}</h2>
     <p class="post_p">{{post.text}}</p>
-    <a href='comments'><img class='ck' src={% static 'img\weee.png' %}></a>
+    <a href={{ post.get_absolutely_url }}><img class='ck' src={% static 'img\weee.png' %}></a>
     <div class="xom">
             <p class="author">{{post.author}}</p>
             <p class="time_submit">{{post.created}}</p>
     </div>
+    
 </div>
+    {% for comment in post.get_comments %}
+        <div>
+            <p>{{comment.text}}</p>
+            <div class="xom">
+                    <p class="author">{{comment.author}}</p>
+                    <p class="time_submit">{{comment.created}}</p>
+            </div>
+        </div>
+    {% endfor %}

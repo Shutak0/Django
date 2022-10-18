@@ -1,3 +1,4 @@
+from django.urls import include, re_path
 from django.urls import path
 from . import views
 urlpatterns = [
@@ -7,5 +8,6 @@ urlpatterns = [
     path('popular/', views.popular,name='popular'),
     path('comments/', views.comments, name='comments'),
     path('kartinka', views.ckartinka, name='ckartinka'),
-    path('send/', views.send, name='send')
+    path('send/', views.send, name='send'),
+    re_path(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.post, name='post')
 ]

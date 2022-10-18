@@ -1,4 +1,7 @@
+from itertools import product
+from tracemalloc import get_object_traceback
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from .models import Post
 def index(request):
     posts = Post.objects.all()
@@ -15,3 +18,6 @@ def send(request):
     return render(request, 'forum/send.html')
 def ckartinka(request):
     return render(request, 'img/weee.png')
+def post(request, id, slug):
+    post = get_object_or_404(Post, id=id, slug=slug)
+    return render(request, 'forum/comments.html', {'post': post})
