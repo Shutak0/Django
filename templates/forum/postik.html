@@ -3,20 +3,14 @@
 {% block content%}
 <section class="posts">
         <div class="container">
-            {% include 'forum/post.html' %}
+            {% include 'forum/posts/post.html' %}
             {% for comment in post.get_comments %}
-                {% include 'forum/comment.html' %}
+                {% include 'forum/comments/comment.html' %}
             {% endfor %}
-        <section class="posts">
-        <div class="container"><form action="./" method="post">
                 <label for="comment">Комментарий</label>
                 <input type="text" name="text" id="name" class="comment">
-
-
                 <button  id="otpr">Опубликовать</button>
         </div>
-        </div>
-</section>
 </section>
 {% endblock %}
 {% csrf_token %}

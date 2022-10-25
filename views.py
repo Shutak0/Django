@@ -14,8 +14,8 @@ def latest(request):
     return render(request, 'forum/latest.html', {})
 def popular(request):
     return render(request, 'forum/popular.html', {})
-def comments(request):
-    return render(request, 'forum/comments.html', {})
+def postik(request):
+    return render(request, 'forum/postik.html', {})
 def send(request):
     return render(request, 'forum/send.html')
 def ckartinka(request):
@@ -26,4 +26,4 @@ def post(request, id, slug):
         client_text = request.POST.get('text', False)
         comment = Comment(text=client_text, author='ádmín', post=post)
         comment.save()
-    return render(request, 'forum/comments.html', {'post': post})
+    return render(request, 'forum/postik.html', {'post': post})
