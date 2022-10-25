@@ -2,11 +2,11 @@
 {% load static %}
 <section class="posts">
         <div class="container"><form action="./" method="post">
-    <label for="comment">Комментарий</label>
-    <input type="text" name="name" id="name" class="comment">
+                <label for="comment">Комментарий</label>
+                <input type="text" name="text" id="name" class="comment">
 
 
-    <button  id="otpr">Опубликовать</button>
-</form>
+                <button  id="otpr">Опубликовать</button>
         </div>
 </section>
+{% csrf_token %}

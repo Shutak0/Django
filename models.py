@@ -15,10 +15,10 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, db_index=True)
     def get_absolutely_url(self):
         return reverse('forum:post', args=[self.id, self.slug])
-    def get_comment(post):
-        return Comment.objects.filter(product=post)
+    def get_comments(post):
+        return Comment.objects.filter(post=post)
 class Comment(models.Model):
-    comment = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     text = models.TextField(max_length=200)
     author = models.CharField(max_length=16)
     created = models.DateField(auto_now_add=True)

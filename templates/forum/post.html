@@ -9,12 +9,3 @@
     </div>
     
 </div>
-    {% for comment in post.get_comments %}
-        <div>
-            <p>{{comment.text}}</p>
-            <div class="xom">
-                    <p class="author">{{comment.author}}</p>
-                    <p class="time_submit">{{comment.created}}</p>
-            </div>
-        </div>
-    {% endfor %}
