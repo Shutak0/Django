@@ -24,6 +24,13 @@ def post(request, id, slug):
     post = get_object_or_404(Post, id=id, slug=slug)
     if request.method == 'POST':
         client_text = request.POST.get('text', False)
-        comment = Comment(text=client_text, author='ádmín', post=post)
+        comment = Comment(text=client_text, author=request.user, post=post)
         comment.save()
     return render(request, 'forum/postik.html', {'post': post})
+def makepost(request):
+    if request.method == 'POST':
+        client_text = request.POST.get('text', False)
+        client_title = request.POST.get('title', False)
+        postik = Post(text=client_text, author=request.user, title=client_title, slug=client_title)
+        postik.save()
+    return render(request, 'forum/posts/makepost.html')

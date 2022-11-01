@@ -123,6 +123,14 @@ nav{
   align-items: center;
 width: 1000px;
 }
+.logreg{
+  display: flex;
+  text-align: center;
+}
+#formlog{
+  text-align: center;
+  display: flex;
+}
 .post_p{
     padding-left: 10%;
     padding-right: 10%;

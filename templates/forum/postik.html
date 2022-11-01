@@ -7,9 +7,13 @@
             {% for comment in post.get_comments %}
                 {% include 'forum/comments/comment.html' %}
             {% endfor %}
+            {% if user.is_authenticated %}
+                <form action="./" method="post">
                 <label for="comment">Комментарий</label>
                 <input type="text" name="text" id="name" class="comment">
                 <button  id="otpr">Опубликовать</button>
+                {% csrf_token %}
+            {% endif %}
         </div>
 </section>
 {% endblock %}

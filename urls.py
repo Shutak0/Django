@@ -9,5 +9,7 @@ urlpatterns = [
     path('postik/', views.postik, name='postik'),
     path('kartinka', views.ckartinka, name='ckartinka'),
     path('send/', views.send, name='send'),
+    path('makepost/', views.makepost, name='makepost'),
+    path('postik/', views.postik, name='postik'),
     re_path(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.post, name='post')
 ]

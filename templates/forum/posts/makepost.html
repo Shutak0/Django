@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+    <form action="./" method="post">
+    <label for="comment">Сделай пост!!!</label>
+    <input type="title" name="title" id="name" class="comment">
+    <input type="text" name="text" id="name" class="comment">
+    <button  id="otpr">Опубликовать</button>
+    {% csrf_token %}
+{% else %}
+<p>You! You need! You need to! You need to login! YOU NEED TO LOGIN! YOU NEED LOGIN!!! DO!</p>    
+{% endif %}
