@@ -1,3 +1,5 @@
+from datetime import datetime
+from http import client
 from itertools import product
 from tracemalloc import get_object_traceback
 from urllib import request
@@ -5,13 +7,15 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from .models import Post
 from .models import Comment
+from .models import LikeDis
 def index(request):
     posts = Post.objects.all()
     return render(request, 'forum/index.html', {'posts':posts})
 def faq(request):
     return render(request, 'forum/faq.html', {})
 def latest(request):
-    return render(request, 'forum/latest.html', {})
+    posts = Post.objects.all().order_by('-created')[:30]
+    return render(request, 'forum/latest.html', {'posts':posts})
 def popular(request):
     return render(request, 'forum/popular.html', {})
 def postik(request):
@@ -33,4 +37,11 @@ def makepost(request):
         client_title = request.POST.get('title', False)
         postik = Post(text=client_text, author=request.user, title=client_title, slug=client_title)
         postik.save()
+    return render(request, 'forum/posts/makepost.html')
+def like(request, id, slug):
+    if request.method == 'POST':
+        LD = int(request.POST.get('value', False))
+        post = get_object_or_404(Post, id=id, slug=slug)
+        like = LikeDis(post = post, user=request.user, vote=LD)
+        like.save()
     return render(request, 'forum/posts/makepost.html')

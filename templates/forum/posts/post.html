@@ -5,6 +5,17 @@
     <a href={{ post.get_absolutely_url }}><img class='ck' src={% static 'img\weee.png' %}></a>
     <div class="xom">
             <p class="author">{{post.author}}</p>
+            {% if user.is_authenticated %}
+                <form action={% url 'forum:like' post.id post.slug %} method="post">
+                <input type='hidden' name='vote' value ='1'>
+                    <button>-</button>
+                    {% csrf_token %}
+                </input>
+                <form action={% url 'forum:like' post.id post.slug %} method="post">
+                <input type='hidden' name='vote' value ='-1'>
+                    <button>+</button>
+                    {% csrf_token %}
+            {% endif %}
             <p class="time_submit">{{post.created}}</p>
     </div>
     
