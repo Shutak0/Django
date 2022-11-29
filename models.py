@@ -26,6 +26,12 @@ class Comment(models.Model):
 class LikeDis(models.Model):
     post = models.ForeignKey(Post, on_delete=models.SET_NULL, null=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    likes = 0
-    votes = (likes)
-    vote = models.SmallIntegerField(verbose_name = ('Vote'), choices = votes)
+    LIKE = +1
+    DISLIKE = -1
+    
+    VOTES = (
+        (DISLIKE, 'I don`t like it'),
+        (LIKE, 'I like it')
+    )
+
+    vote = models.SmallIntegerField(verbose_name=('Vote'), choices=VOTES)

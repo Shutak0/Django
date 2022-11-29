@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from .models import Post
 from .models import Comment
 from .models import LikeDis
+from django.shortcuts import redirect
 def index(request):
     posts = Post.objects.all()
     return render(request, 'forum/index.html', {'posts':posts})
@@ -44,4 +45,4 @@ def like(request, id, slug):
         post = get_object_or_404(Post, id=id, slug=slug)
         like = LikeDis(post = post, user=request.user, vote=LD)
         like.save()
-    return render(request, 'forum/posts/makepost.html')
+    return redirect('forum:post',id,slug)

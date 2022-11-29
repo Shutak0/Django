@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import Post, Comment, Theme
+from .models import Post, Comment, Theme, LikeDis
 class PostAdmin(admin.ModelAdmin):
     list_display =  ['title', 'text']
     list_filter = ['author', 'created']
@@ -11,6 +11,10 @@ class CommentAdmin(admin.ModelAdmin):
 class ThemeAdmin(admin.ModelAdmin):
     list_display =  ['name']
     list_filter = ['name']
+class LikeDisAdmin(admin.ModelAdmin):
+    list_display = ['user', 'post', 'vote']
+    list_filter = ['user', 'post', 'vote']
 admin.site.register(Post, PostAdmin)
 admin.site.register(Comment, CommentAdmin)
 admin.site.register(Theme, ThemeAdmin)
+admin.site.register(LikeDis, LikeDisAdmin)
